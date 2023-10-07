@@ -1,0 +1,22 @@
+body {
+    background: #ffffff;
+}
+
+.main_container {
+    margin: 0 auto;           /* Центровка по горизонтали */
+    background: #000000;      /* Задний фон контейнера */
+    width: 90%;               /* Ширина контейнера */
+    height: 450px;            /* Высота контейнера */
+    border: 3px solid #ff0000;/* Толщина и цвет границы контейнера */
+    border-radius: 40px;      /* Радиус скругления углов контейнера */
+}
+
+.header {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align:top;
+    color: #ff0000;              /* Цвет текста */
+    border: 3px solid #ff0000;   /* Толщина и цвет границы контейнера */
+    border-radius: 10px;         /* Радиус скругления углов контейнера */
+}
