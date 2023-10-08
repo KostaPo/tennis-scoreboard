@@ -15,7 +15,7 @@
         <h1>НОВЫЙ МАТЧ</h1>
     </div>
     <div class="new_match_form">
-        <form action="/new-match" method="post" onsubmit="return validateForm()" accept-charset="UTF-8">
+        <form action="${pageContext.request.contextPath}/new-match" method="post" onsubmit="return validateForm()" accept-charset="UTF-8">
             <label for="player1">Игрок 1:</label>
             <input type="text" name="player1" id="player1"><br>
             <label for="player2">Игрок 2:</label>
@@ -38,7 +38,7 @@
         </script>
     </div>
     <div class="main_menu_link">
-        <a href="/">Возврат на главную</a>
+        <a href="${pageContext.request.contextPath}/">Возврат на главную</a>
     </div>
 </div>
 </body>

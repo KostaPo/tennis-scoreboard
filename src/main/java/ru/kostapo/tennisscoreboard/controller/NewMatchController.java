@@ -34,7 +34,7 @@ public class NewMatchController extends HttpServlet {
             newMatch.setFirstPlayer(new PlayerReqDto(request.getParameter("player1")));
             newMatch.setSecondPlayer(new PlayerReqDto(request.getParameter("player2")));
             ongoingMatchesService.startNewMatch(newMatch);
-            String redirectUrl = String.format("/match-score?uuid=%s", newMatch.getUuid());
+            String redirectUrl = String.format("%s/match-score?uuid=%s", request.getContextPath(), newMatch.getUuid());
             response.sendRedirect(redirectUrl);
         } catch (Exception ex) {
             request.setAttribute("exception_message", ex.getMessage());

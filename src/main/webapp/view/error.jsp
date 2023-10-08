@@ -18,7 +18,7 @@
         </h1>
     </div>
     <div class="links_container">
-        <a href="/">Возврат на главную</a>
+        <a href="${pageContext.request.contextPath}/">Возврат на главную</a>
     </div>
 </div>
 </body>

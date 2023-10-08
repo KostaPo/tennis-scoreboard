@@ -16,8 +16,8 @@
         <h1>БОЛЬШОЙ ТЕННИС</h1>
     </div>
     <div class="links_container">
-        <a href="/new-match">Новый матч</a>
-        <a href="/matches">Сыгранные матчи</a>
+        <a href="${pageContext.request.contextPath}/new-match">Новый матч</a>
+        <a href="${pageContext.request.contextPath}/matches">Сыгранные матчи</a>
     </div>
 </div>
 </body>

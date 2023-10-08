@@ -53,9 +53,12 @@ public class MatchScoreController extends HttpServlet {
             matchScoreService.addScoreToPlayer(playerNumber, match.getUuid());
             if (!match.getScore().getState().equals(State.GO_ON)) {
                 finishedMatchesService.persist(match);
+                request.setAttribute("match", match);
+                request.getRequestDispatcher("view/match-score.jsp").forward(request, response);
+            } else {
+                request.setAttribute("match", match);
+                response.sendRedirect(request.getContextPath() + "/match-score?uuid=" + uuid);
             }
-            request.setAttribute("match", match);
-            request.getRequestDispatcher("view/match-score.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("exception_message", ex.getMessage());
             request.getRequestDispatcher("view/error.jsp").forward(request, response);

@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <form action="/match-score?uuid=<%= match.getUuid() %>" method="POST">
+        <form action="${pageContext.request.contextPath}/match-score?uuid=<%= match.getUuid() %>" method="POST">
             <div class="buttons">
                 <button type="submit" onclick="disableButton(this)">
                     <%= match.getFirstPlayer().getName() %>
@@ -109,14 +109,14 @@
     </div>
     <% if (!match.getScore().getState().equals(State.GO_ON)) { %>
     <div class="links_container">
-        <a href="/">Возврат на главную</a>
-        <% String url; %>
+        <a href="${pageContext.request.contextPath}/">Возврат на главную</a>
+        <% String name; %>
         <% if (match.getScore().getState().equals(State.PLAYER_1_WIN)) { %>
-        <% url = "/matches?player_name=" + match.getFirstPlayer().getName(); %>
+        <% name = match.getFirstPlayer().getName(); %>
         <% } else { %>
-        <% url = "/matches?player_name=" + match.getSecondPlayer().getName(); %>
+        <% name = match.getSecondPlayer().getName(); %>
         <% } %>
-        <a href="<%=url%>">Сыгранные матчи</a>
+        <a href="${pageContext.request.contextPath}/matches?player_name=<%=name%>">Сыгранные матчи</a>
     </div>
     <% } %>
 </div>

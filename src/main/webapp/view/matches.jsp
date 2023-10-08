@@ -19,7 +19,7 @@
     <% PageResDto<Match> responsePage = (PageResDto<Match>) request.getAttribute("responsePage"); %>
 
     <div class="matches_table">
-        <form name="filter" method="GET" action="/matches" onsubmit="return validateForm()">
+        <form name="filter" method="GET" action="${pageContext.request.contextPath}/matches" onsubmit="return validateForm()">
             <input type="text" name="player_name" placeholder="Имя игрока" />
             <button type="submit">Найти</button>
         </form>
@@ -32,7 +32,7 @@
                 }
             }
         </script>
-        <a href="/matches">
+        <a href="${pageContext.request.contextPath}/matches">
             <button>Сбросить</button>
         </a>
 
@@ -56,12 +56,12 @@
             <% if (responsePage.isWithFilter()) { %>
             <% pageUrl += "&player_name=" + responsePage.getFilterKey(); %>
             <% } %>
-            <a href="<%= pageUrl %>"><%= pageNumber %></a>
+            <a href="${pageContext.request.contextPath}/<%= pageUrl %>"><%= pageNumber %></a>
             <% } %>
         </div>
     </div>
     <div class="main_menu_link">
-        <a href="/">Возврат на главную</a>
+        <a href="${pageContext.request.contextPath}/">Возврат на главную</a>
     </div>
 
 </div>

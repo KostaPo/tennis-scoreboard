@@ -3,4 +3,47 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <display-name>tennis-scoreboard</display-name>
+
+    <listener>
+        <listener-class>ru.kostapo.tennisscoreboard.common.ContextListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>ru.kostapo.tennisscoreboard.controller.MainController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MatchesController</servlet-name>
+        <servlet-class>ru.kostapo.tennisscoreboard.controller.MatchesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MatchesController</servlet-name>
+        <url-pattern>/matches</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MatchScoreController</servlet-name>
+        <servlet-class>ru.kostapo.tennisscoreboard.controller.MatchScoreController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MatchScoreController</servlet-name>
+        <url-pattern>/match-score</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewMatchController</servlet-name>
+        <servlet-class>ru.kostapo.tennisscoreboard.controller.NewMatchController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewMatchController</servlet-name>
+        <url-pattern>/new-match</url-pattern>
+    </servlet-mapping>
+
 </web-app>
