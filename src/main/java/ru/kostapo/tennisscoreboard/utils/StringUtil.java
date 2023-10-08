@@ -27,7 +27,7 @@ public class StringUtil {
             throw new BadParameterException(String.format("%s - СЛИШКОМ ДЛИННОЕ ИМЯ ИГРОКА", name));
         }
         for (char ch : name.toCharArray()) {
-            if (!isCharacterInCyrillicOrLatinBlock(ch)) {
+            if (!Character.isLetter(ch) || !isCharacterInCyrillicOrLatinBlock(ch)) {
                 throw new BadParameterException(String.format("%s - НЕ КОРРЕКТНОЕ ИМЯ ИГРОКА", name));
             }
         }
